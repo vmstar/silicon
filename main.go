@@ -1,4 +1,4 @@
-package silicon
+package main
 
 import (
 	"fmt"
