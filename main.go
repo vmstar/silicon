@@ -13,7 +13,7 @@ func main() {
 
 	router.GET("/string/:name", func(c *gin.Context) {
 		name := c.Param("name")
-		fmt.Printf("Hello %s", name)
+		c.Writer.WriteString(fmt.Sprintf("Hello %s", name))
 	})
 
 	s := &http.Server{
