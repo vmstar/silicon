@@ -11,9 +11,15 @@ import (
 func main() {
 	router := gin.Default()
 
+	router.LoadHTMLFiles("html/*")
+
 	router.GET("/string/:name", func(c *gin.Context) {
 		name := c.Param("name")
 		c.Writer.WriteString(fmt.Sprintf("Hello %s", name))
+	})
+
+	router.GET("/html", func(c *gin.Context) {
+		c.HTML(200, "index.html", "flysnow_org")
 	})
 
 	s := &http.Server{
