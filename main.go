@@ -11,7 +11,7 @@ import (
 func main() {
 	router := gin.Default()
 
-	router.LoadHTMLFiles("html/*")
+	router.LoadHTMLGlob("html/*")
 
 	router.GET("/string/:name", func(c *gin.Context) {
 		name := c.Param("name")
